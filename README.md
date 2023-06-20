@@ -1,48 +1,51 @@
-Ansible Playbook
+**Ansible Playbook**
 
 This repository contains an Ansible playbook that automates the installation and configuration of Pi-hole and Unbound on Ubuntu systems.
 
-Playbook Structure
+**Playbook Structure**
 
 The playbook contains the following tasks:
 
-Updating and upgrading system packages
-Installing necessary dependencies such as curl, dnsutils, and netcat
-Installing and configuring Unbound
-Usage
+- Updating and upgrading system packages
+- Installing necessary dependencies such as curl, dnsutils, and netcat
+- Installing and configuring Unbound
+
+**Usage**
 
 To use this playbook, follow these steps:
 
-Make sure Ansible is installed on your machine
-Clone this repository using the command:
-shell
-Copy code
+1. Make sure Ansible is installed on your machine
+2. Clone this repository using the command:
+```shell
 git clone https://github.com/yourusername/yourrepository.git
-Navigate to the repository's directory with:
-shell
-Copy code
+```
+3. Navigate to the repository's directory with:
+```shell
 cd yourrepository
-Run the playbook using:
-shell
-Copy code
+```
+4. Run the playbook using:
+```shell
 ansible-playbook -i your_inventory_file install_pihole_and_unbound.yml -K
-Replace your_inventory_file with the path to your Ansible inventory file.
+```
+Replace `your_inventory_file` with the path to your Ansible inventory file.
 
-Calling Role in Playbook
+**Calling Role in Playbook**
 
-To call this role in your playbook, use the include_role task:
-
-shell
-Copy code
+To call this role in your playbook, use the `include_role` task:
+```shell
 - include_role:
     name: yourrepository
-Replace yourrepository with the name of this repository in your system.
+```
+Replace `yourrepository` with the name of this repository in your system.
 
-Requirements
+**Requirements**
 
-Ansible 2.10 or later
-License
+- Ansible 2.10 or later
 
-This project is licensed under the MIT License.
+**License**
 
-Remember to replace yourusername and yourrepository with your Github username and the name of your repository respectively, and install_pihole_and_unbound.yml with the actual name of your Ansible playbook file.
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Remember to replace `yourusername` and `yourrepository` with your Github username and the name of your repository respectively, and `install_pihole_and_unbound.yml` with the actual name of your Ansible playbook file.
