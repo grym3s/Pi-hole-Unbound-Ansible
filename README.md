@@ -1,51 +1,48 @@
-```markdown
-# Pi-hole and Unbound Installation with Ansible
+Ansible Playbook
 
-This repository contains an Ansible playbook for installing Pi-hole and Unbound on a target Ubuntu system.
+This repository contains an Ansible playbook that automates the installation and configuration of Pi-hole and Unbound on Ubuntu systems.
 
-## Description
+Playbook Structure
 
-The Ansible playbook contained in this repository performs the following tasks:
+The playbook contains the following tasks:
 
-1. Updates and upgrades the packages on the target system.
-2. Installs necessary packages including curl, dnsutils, and netcat.
-3. Checks if Unbound is already installed on the target system.
-4. If Unbound is not installed, the playbook installs it.
-5. After the Unbound installation, the playbook creates a configuration file at /etc/unbound/unbound.conf.d/pi-hole.conf with the required settings for Unbound.
+Updating and upgrading system packages
+Installing necessary dependencies such as curl, dnsutils, and netcat
+Installing and configuring Unbound
+Usage
 
-This playbook is intended to be run on a Ubuntu system, but it may work on other Linux distributions as well.
+To use this playbook, follow these steps:
 
-## Usage
-
-To use the playbook, follow these steps:
-
-1. Clone this repository to your local system:
-
-```
+Make sure Ansible is installed on your machine
+Clone this repository using the command:
+shell
+Copy code
 git clone https://github.com/yourusername/yourrepository.git
-```
-
-2. Change to the cloned directory:
-
-```
+Navigate to the repository's directory with:
+shell
+Copy code
 cd yourrepository
-```
-
-3. Run the playbook on your target hosts:
-
-```
+Run the playbook using:
+shell
+Copy code
 ansible-playbook -i your_inventory_file install_pihole_and_unbound.yml -K
-```
+Replace your_inventory_file with the path to your Ansible inventory file.
 
-Replace `your_inventory_file` with the path to your Ansible inventory file. The `-K` option will prompt you for the sudo password.
+Calling Role in Playbook
 
-## Contributing
+To call this role in your playbook, use the include_role task:
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+shell
+Copy code
+- include_role:
+    name: yourrepository
+Replace yourrepository with the name of this repository in your system.
 
-## License
+Requirements
 
-[MIT](https://choosealicense.com/licenses/mit/)
-```
+Ansible 2.10 or later
+License
 
-Just replace `yourusername` and `yourrepository` with your Github username and the name of your repository respectively. Also, replace `install_pihole_and_unbound.yml` with the actual name of your Ansible playbook file.
+This project is licensed under the MIT License.
+
+Remember to replace yourusername and yourrepository with your Github username and the name of your repository respectively, and install_pihole_and_unbound.yml with the actual name of your Ansible playbook file.
